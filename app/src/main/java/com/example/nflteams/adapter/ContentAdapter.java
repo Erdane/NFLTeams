@@ -19,7 +19,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
         void onItemClick(MyAdapter adapter);
     }
 
-    private final List<MyAdapter> adapters;
+    //private final List<MyAdapter> adapters;
     private final OnItemClickListener listener;
 
     public ContentAdapter(List<MyAdapter> adapters, OnItemClickListener listener) {
