@@ -2,6 +2,7 @@ package com.example.nflteams.model;
 
 public class Team {
     private String name;
+   // public String imageUrl;
     private int id;
 
     public String getName() {
@@ -12,6 +13,13 @@ public class Team {
         this.name = name;
     }
 
+    /*public String getImageUrl() {
+        return imageUrl;
+    }*/
+
+    /*public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }*/
     public int getId(){
         return id;
     }

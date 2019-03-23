@@ -1,9 +1,11 @@
 package com.example.nflteams;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.example.nflteams.adapter.MyAdapter;
 import com.example.nflteams.model.Team;
@@ -42,8 +44,29 @@ public class MainActivity extends Activity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
+        /*OnItemClickListener listener = new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //DEMARRER LA DEUXIEME ACTIVITE
+                toastMe();
+            }
+        };*/
+
         mAdapter = new MyAdapter(input);
         recyclerView.setAdapter(mAdapter);
     }
+
+    //DOESNT WORK§§§§§§§§§§§§§§§§§§§§§§§
+    public void backToTop(View view) {
+        view.scrollTo(0,recyclerView.getTop());
+    }
+
+    public void startSecondActivity(View view){
+        Intent intent = new Intent(this, TeamDetailsActivity.class);
+        startActivity(intent);
+    }
+
+
+
 
 }
