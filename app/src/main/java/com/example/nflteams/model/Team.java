@@ -5,6 +5,10 @@ public class Team {
    // public String imageUrl;
     private int id;
 
+   /* public Team(Context context) {
+        super(context);
+    }*/
+
     public String getName() {
         return name;
     }
@@ -27,4 +31,6 @@ public class Team {
     public void setId(int in) {
         this.id = id;
     }
+
+
 }

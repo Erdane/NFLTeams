@@ -3,29 +3,32 @@ package com.example.nflteams.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.nflteams.MainActivity;
 import com.example.nflteams.R;
 import com.example.nflteams.model.Team;
 
 import java.util.List;
+
 /////////////////////////////////////RAJOUT DE PICASSO ET ESSAI DU CLICK POUR OUVRI LA DEUXIEME ACTIVITE
 //////////////////////////////RAJOUTER LES URL DE SIMAGES API REST
 ////////////SUPPRIMER LES IMAGEURL DANS LA CLASSE TEAM
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private MainActivity activity;
+
+    public interface OnItemClickListener{
+        void onItemClick(Team team);
+    }
 
     private List<Team> values;
-    private AdapterView.OnItemClickListener listener;
+    private final OnItemClickListener listener;
+
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Team> myDataset) {//, Context context
+    public MyAdapter(List<Team> myDataset, OnItemClickListener listener) {//, Context context, OnItemClickListener listener
         values = myDataset;
+        this.listener = listener;
         //this.context = context;
     }
 
@@ -50,33 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             image = v.findViewById(R.id.icon);
         }
 
-       public void bind(ViewHolder holder, final int position) {
-           Team team = values.get(position);
-           final String name = team.getName();
-           holder.txtHeader.setText(name);
-           holder.txtHeader.setOnClickListener(new OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   activity.startSecondActivity(v);
-                  // toastMe();
-                   //remove(position);
-                   //listener.onItemClick(team);
-               }
-           });
 
-           holder.txtFooter.setText("Footer: " + name);
-            /*Context context = null;
-            context = context.getApplicationContext();
-            View v = new View(context);
-            ViewHolder holder = new ViewHolder(v);
-            Picasso.with(v.getContext()).load("C:/Users/mahob/Desktop/ESIEA/Programmation mobile").into(holder.image);
-           /* v.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ///////////METTRE LAPPEL DE LA DEUXIEME ACTIVITE
-                }
-            });*/
-        }
     }
 
     public void add(int position, Team item) {
@@ -110,8 +87,33 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
+        //holder.bind(holder, position);
+        final Team team = values.get(position);
+        final String name = team.getName();
+        holder.txtHeader.setText(name);
 
-        holder.bind(holder, position);
+        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // toastMe();
+                //remove(position);
+                listener.onItemClick(team);
+
+            }
+        });
+
+        holder.txtFooter.setText("Footer: " + name);
+           /*holder.txtHeader.setOnClickListener(new OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   listener.onItemClick(team,v,position,R.id.firstLine);
+                   //MainActivity mainActivity = new MainActivity();
+                   //mainActivity.startSecondActivity();
+               }
+           });*/
+
+
 
     }
 

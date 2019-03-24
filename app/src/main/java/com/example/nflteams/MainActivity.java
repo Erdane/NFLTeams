@@ -17,13 +17,11 @@ public class MainActivity extends Activity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    //private final Context context = null;
+    //private MyAdapter.OnItemClickListener listener;
+
 
     private MainController controller;
 
-   // public MainActivity(Context context) {
-     //   this.context = context;
-    //}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +42,21 @@ public class MainActivity extends Activity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        /*OnItemClickListener listener = new OnItemClickListener() {
+        //MyAdapter.ViewHolder holder = null;
+        /*holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //DEMARRER LA DEUXIEME ACTIVITE
-                toastMe();
+            public void onClick(View v) {
+                startSecondActivity();
             }
-        };*/
+        });*/
+        MyAdapter.OnItemClickListener listener = new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Team team) {
+                startSecondActivity();
+            }
+        };
+        mAdapter = new MyAdapter(input, listener);
 
-        mAdapter = new MyAdapter(input);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -61,7 +65,7 @@ public class MainActivity extends Activity {
         view.scrollTo(0,recyclerView.getTop());
     }
 
-    public void startSecondActivity(View view){
+    public void startSecondActivity(){
         Intent intent = new Intent(this, TeamDetailsActivity.class);
         startActivity(intent);
     }
