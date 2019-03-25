@@ -2,12 +2,9 @@ package com.example.nflteams.model;
 
 public class Team {
     private String name;
-   // public String imageUrl;
-    private int id;
+    public String imageUrl;
+    private String[] keyPlayers;
 
-   /* public Team(Context context) {
-        super(context);
-    }*/
 
     public String getName() {
         return name;
@@ -17,20 +14,24 @@ public class Team {
         this.name = name;
     }
 
-    /*public String getImageUrl() {
+
+    public String getImageUrl() {
         return imageUrl;
-    }*/
+    }
 
-    /*public void setImageUrl(String imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }*/
-    public int getId(){
-        return id;
-    }
-
-    public void setId(int in) {
-        this.id = id;
     }
 
 
+    public String[] getKeyPlayers() {
+        return keyPlayers;
+    }
+
+    public void setKeyPlayers(String[] keyPlayers) {
+        this.keyPlayers = keyPlayers;
+    }
+
+
+//////////////////////////////Connecter l'adapter sur la deuxième activité, connecter l'adapter à l'api et au données
 }

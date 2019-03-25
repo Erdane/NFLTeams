@@ -1,7 +1,6 @@
 package com.example.nflteams.retrofitgerrit;
 
 
-import com.example.nflteams.model.APITeamResponse;
 import com.example.nflteams.model.Team;
 
 import java.util.List;
@@ -13,5 +12,7 @@ public interface GerritAPI {
 
     @GET("teams.json")
     Call<List<Team>> getNFLTeam();
+
+
 
 }

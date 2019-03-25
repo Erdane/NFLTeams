@@ -17,19 +17,26 @@ import java.util.List;
 ////////////SUPPRIMER LES IMAGEURL DANS LA CLASSE TEAM
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
+
+
     public interface OnItemClickListener{
         void onItemClick(Team team);
     }
 
     private List<Team> values;
-    private final OnItemClickListener listener;
+    private OnItemClickListener listener;
+    private String[] keyPlayers;
+
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Team> myDataset, OnItemClickListener listener) {//, Context context, OnItemClickListener listener
+    public MyAdapter(List<Team> myDataset, OnItemClickListener listener) {
         values = myDataset;
         this.listener = listener;
-        //this.context = context;
+    }
+
+    public MyAdapter(String[] keyPlayers){
+        this.keyPlayers = keyPlayers;
     }
 
     //private final Context context;
@@ -37,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         // each data item is just a string in this case
         public TextView txtHeader;
         public TextView txtFooter;
@@ -90,6 +97,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         //holder.bind(holder, position);
         final Team team = values.get(position);
         final String name = team.getName();
+
+        //context = context.getApplicationContext();
         holder.txtHeader.setText(name);
 
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
@@ -104,15 +113,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         });
 
         holder.txtFooter.setText("Footer: " + name);
-           /*holder.txtHeader.setOnClickListener(new OnClickListener() {
-               @Override
-               public void onClick(View v) {
-                   listener.onItemClick(team,v,position,R.id.firstLine);
-                   //MainActivity mainActivity = new MainActivity();
-                   //mainActivity.startSecondActivity();
-               }
-           });*/
-
 
 
     }

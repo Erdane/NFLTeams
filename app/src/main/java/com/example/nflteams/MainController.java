@@ -2,7 +2,6 @@ package com.example.nflteams;
 
 import android.util.Log;
 
-import com.example.nflteams.model.APITeamResponse;
 import com.example.nflteams.model.Team;
 import com.example.nflteams.retrofitgerrit.GerritAPI;
 import com.google.gson.Gson;
@@ -21,8 +20,8 @@ public class MainController implements Callback<List<Team>>{
 
     private MainActivity activity;
 
-    public MainController(MainActivity mainActivity) {
-        this.activity = mainActivity;
+    public MainController(MainActivity activity) {
+        this.activity = activity;
     }
 
     public void onStart(){
