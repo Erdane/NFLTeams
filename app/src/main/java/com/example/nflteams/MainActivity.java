@@ -61,9 +61,10 @@ public class MainActivity extends Activity {
     }
 
     //DOESNT WORK§§§§§§§§§§§§§§§§§§§§§§§
-    public void backToTop(View view) {
-        view.scrollTo(0,recyclerView.getTop());
-    }
+    /*public void backToTop() {
+        //recyclerView.scrollTo(0,recyclerView.getTop());
+        layoutManager.scrollToPosition(0);
+    }*/
 
     public void startSecondActivity(){
         Intent intent = new Intent(this, TeamDetailsActivity.class);
@@ -71,6 +72,7 @@ public class MainActivity extends Activity {
     }
 
 
-
-
+    public void backToTop(View view) {
+        layoutManager.scrollToPosition(0);
+    }
 }

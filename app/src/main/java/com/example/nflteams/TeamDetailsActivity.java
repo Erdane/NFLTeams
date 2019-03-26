@@ -19,7 +19,7 @@ public class TeamDetailsActivity extends Activity {
         setContentView(R.layout.activity_detailsteam);
         recyclerView = findViewById(R.id.recycler_details);
         Team team = new Team();
-        showListKeyPlayers(team.getKeyPlayers());
+       // showListKeyPlayers(team.getKeyPlayers());
 
     }
 
