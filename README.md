@@ -25,3 +25,9 @@ Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/team
       - Icone de lancement de l'application
 ![Screenshot](home.jpg)
 
+### SplashScreen
+      - SplashScreen
+![Screenshot](splash.jpg)
+
+
+
