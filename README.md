@@ -20,3 +20,8 @@ Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/team
     - Boutton Back-to-top (pour remonter en haut de la page)
     
 ## Fonctionnalités 
+
+### Menu home de mon téléphone
+      - Icone de lancement de l'application
+![Screenshot](home.jpg)
+
