@@ -3,10 +3,10 @@ A mobile application using an API REST of NFL
 
 ## Présentation
 Applcation android faisant un appel API de la NFL.
-Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/teams.json (que jai rédigé entierement)
+Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/teams.json (que jai rédigé entierement) (et également cet API https://erdane.github.io/freeagents.json qui contient les free-agents)
 
 ## Prérequis
-  - Récupérer la branche (master à vérifier) (mettre le lien de la branche)
+  - Récupérer la branche feature/BackToTopButton : https://github.com/Erdane/NFLTeams/commits/feature/BackToTopButton
   - Télécharger le fichier sur son mobile android : app-debug.apk 
 
 
@@ -37,5 +37,6 @@ Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/team
 ### Fonctionalités
     - Back-to-top button, pour revenir au début de la page
 ![Screenshot](backtotop.jpg)
+https://github.com/Erdane/NFLTeams/commits/feature/BackToTopButton
 
 
