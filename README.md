@@ -29,8 +29,13 @@ Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/team
       - SplashScreen
 ![Screenshot](Splash.jpg)
 
-### Première activitée
+### Première activité
+![Screenshot](first.jpg)
 
+### Seconde activité
+
+### Fonctionalités
+    - Back-to-top button, pour revenir au début de la page
 
 
 
