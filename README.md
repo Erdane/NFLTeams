@@ -36,6 +36,6 @@ Cet API est issue de mon site héberger sur GitHub https://erdane.github.io/team
 
 ### Fonctionalités
     - Back-to-top button, pour revenir au début de la page
-
+![Screenshot](backtotop.jpg)
 
 
